@@ -11,6 +11,7 @@
     --white: hsl(0, 0%, 100%);
     --footer-text: hsl(240, 2%, 79%);
     --body-copy: hsl(207, 13%, 34%);
+    --button-transparent: hsla(0, 0%, 100%, 0.15);
     --footer-bg: hsl(240, 10%, 16%);
     --cta-gradient: linear-gradient(to bottom, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
     --body-gradient: linear-gradient(35deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
@@ -66,6 +67,14 @@ img {
     height: auto;
 }
 
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
 /* Reusable css */
 
 .button {
@@ -78,14 +87,9 @@ img {
     font-size: var(--text-medium);
     cursor: pointer;
     transition: 0.3s;
-    margin: 0 var(--m-0-50);
+    margin: var(--m-0-25) var(--m-0-50);
     color: var(--cta-text);
     background: var(--white);
-}
-
-.button:hover {
-    color: var(--white);
-    background: hsla(0, 0%, 100%, 0.15);
 }
 
 .button--outlined {
@@ -99,6 +103,18 @@ img {
     background: var(--white);
 }
 
+.button--transparent {
+    background: hsla(0, 0%, 90%, 0.300);
+    display: block;
+    color: var(--titles-color);    
+}
+
+.button--gradient {
+    background: var(--cta-gradient);
+    display: block;
+    color: var(--white);
+}
+
 .main__section {
     margin: var(--m-2) 0;
     padding: 1em;
@@ -109,10 +125,12 @@ img {
 /* Header */
 
 .header {
-    background: url(../images/bg-pattern-intro.svg) center, var(--cta-gradient);
+    background: url(../images/bg-pattern-intro.svg), var(--cta-gradient);
+    background-position: center;
     padding: 1em 1.25em;
     height: 30em;
     text-align: center;
+    position: relative;
     border-bottom-left-radius: 7.5em;
 }
 
@@ -142,8 +160,77 @@ img {
     font-weight: var(--f-light);
 }
 
+.header__hamburger {
+    background: url('../images/icon-hamburger.svg')no-repeat;
+    height: 1.125em;
+    width: 1.75em;
+}
+
+.header__hamburger.open {
+    background: url('../images/icon-close.svg')no-repeat;
+    height: 1.625em;
+    width: 1.625em;
+}
+
 .nav {
     display: none;
+    position: absolute;
+    top: 7.5em;
+    width: 90%;
+    background: var(--white);
+    padding: 1.5em 1em;
+    text-align: center;
+    border-radius: 1em;
+}
+
+.nav.show {
+    display: block;
+}
+
+.nav__title {
+    color: var(--titles-color);
+    font-weight: var(--f-bold);
+    font-size: var(--text-normal);
+    margin: var(--m-0-75) 0;
+    display: inline-block;
+}
+
+.nav__icon {
+    background: url('../images/icon-arrow-dark.svg')no-repeat;
+    display: inline-block;
+    margin: 0 var(--m-0-25);
+    width: 0.625em;
+    height: 0.437em;
+    transition: 0.2s ease-in-out;
+}
+
+.nav__icon.reverse {
+    transform: rotate(180deg);
+}
+
+.nav__sublist {
+    padding: 1em 0;
+    background: hsla(0, 0%, 98%, 0.9);
+    margin: var(--m-0-75) 0;
+    display: none;
+}
+
+.nav__sublist.show {
+    display: block;
+}
+
+.nav__sublist-item {
+    font-weight: var(--f-light);
+    color: var(--body-copy);
+    margin: var(--m-0-50) 0;
+}
+
+.nav__buttons {
+    width: 100%;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Main */
