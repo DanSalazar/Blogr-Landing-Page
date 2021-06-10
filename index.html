@@ -13,74 +13,77 @@
   
   <header class="header">
     <div class="header__navigation">
+
       <div class="header__logo">
         <img src="./images/logo.svg" alt="logo" class="header__logo-img">
       </div>
   
       <nav class="nav">
-        <ul class="nav__list">
-          <li class="nav__list-content">
-            <a href="#" class="nav__title"> Product </a> <span class="nav__icon"></span>
-            <ul class="nav__sublist">
-              <li class="nav__sublist-item">
-                Overview
-              </li>
-              <li class="nav__sublist-item">
-                Pricing
-              </li>
-              <li class="nav__sublist-item">
-                Marketplace
-              </li>
-              <li class="nav__sublist-item">
-                Features
-              </li>
-              <li class="nav__sublist-item">
-                Integrations
-              </li>
-            </ul>
-          </li>
-        </ul>
-
-        <ul class="nav__list">
-          <li class="nav__list-content">
-            <a href="#" class="nav__title"> Company </a> <span class="nav__icon"></span>
-
-            <ul class="nav__sublist">
-              <li class="nav__sublist-item">
-                About
-              </li>
-              <li class="nav__sublist-item">
-                Team
-              </li>
-              <li class="nav__sublist-item">
-                Blog
-              </li>
-              <li class="nav__sublist-item">
-                Careers
-              </li>
-            </ul>
-            
-          </li>
-        </ul>
-
-        <ul class="nav__list">
-          <li class="nav__list-content">
-            <a href="#" class="nav__title"> Connect </a> <span class="nav__icon"></span>
-
-            <ul class="nav__sublist">
-              <li class="nav__sublist-item">
-                Contact
-              </li>
-              <li class="nav__sublist-item">
-                Newsletter
-              </li>
-              <li class="nav__sublist-item">
-                LinkedIn
-              </li>
-            </ul>
-
-          </li>
-        </ul>
+        <div class="nav__lists">
+          <ul class="nav__list">
+            <li class="nav__list-content">
+              <a href="#" class="nav__title"> Product  <span class="nav__icon"></span> </a> 
+              <ul class="nav__sublist">
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link"> Overview </a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link"> Pricing </a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Marketplace</a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Features</a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Integrations</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+  
+          <ul class="nav__list">
+            <li class="nav__list-content">
+              <a href="#" class="nav__title"> Company <span class="nav__icon"></span> </a> 
+  
+              <ul class="nav__sublist">
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">About</a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Team</a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Blog</a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Careers</a>
+                </li>
+              </ul>
+              
+            </li>
+          </ul>
+  
+          <ul class="nav__list">
+            <li class="nav__list-content">
+              <a href="#" class="nav__title"> Connect <span class="nav__icon"></span> </a> 
+  
+              <ul class="nav__sublist">
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Contact</a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">Newsletter</a>
+                </li>
+                <li class="nav__sublist-item">
+                  <a href="#" class="nav__link">LinkedIn</a>
+                </li>
+              </ul>
+  
+            </li>
+          </ul>
+        </div>
         
         <div class="nav__buttons">
           <button class="button button--transparent"> Login </button>
@@ -105,7 +108,7 @@
     </div>
 
     <div class="header__buttons">
-      <button role="button" class="button">Start for Free</button>
+      <button role="button" class="button button--white">Start for Free</button>
       <button role="button" class="button button--outlined"> Learn More </button>
     </div>
 
@@ -118,13 +121,13 @@
       <h2 class="main__title">
         Designed for the future
       </h2>
-      
+
       <div class="main__image">
         <img src="./images/illustration-editor-mobile.svg" alt="" class="main__illustration-m">
+        <img src="./images/illustration-editor-desktop.svg" alt="" class="main__illustration-d illustration--e">
       </div>
-
-      <div class="main__articles">
-
+      
+      <div class="main__articles articles--left">
         <article class="article">
           <h2 class="article__title">
             Introducing an extensible editor
@@ -147,16 +150,17 @@
             or flow. With this functionality, you’re in full control.
           </p>
         </article>
+      </div>
 
       </div>
 
     </section>
-
+      
     <section class="main__phones">
       <img src="./images/illustration-phones.svg" alt="phones" class="main__svg">
 
-      <article class="article">
-        <h2 class="article__title article--white ">
+      <article class="article article--phone">
+        <h2 class="article__title article--white article--phone--title">
           State of the Art Infrastructure
         </h2>
         <p class="article__text article--white">
@@ -170,10 +174,11 @@
 
     <section class="main__section">
       <div class="main__image">
-        <img src="./images/illustration-laptop-mobile.svg" alt="" class="main__ilustration-m">
+        <img src="./images/illustration-laptop-mobile.svg" alt="" class="main__illustration-m">
+        <img src="./images/illustration-laptop-desktop.svg" alt="" class="main__illustration-d illustration--l">
       </div>
 
-      <div class="main__articles">
+      <div class="main__articles articles--right">
 
         <article class="article">
           <h2 class="article__title">
@@ -207,63 +212,59 @@
   <footer class="footer">
     <img src="./images/logo.svg" alt="logo" class="footer__logo">
 
-    <div class="footer__links">
-
       <ul class="footer__list">
-        <li class="footer__list--title">
+        <li class="footer__list-title">
           Product
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Overview
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Pricing
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Marketplace
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Features
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Integrations
         </li>
       </ul>
 
       <ul class="footer__list">
-        <li class="footer__list--title">
+        <li class="footer__list-title">
           Company
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           About
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Team
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Blog
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Careers
         </li>
       </ul>
 
       <ul class="footer__list">
-        <li class="footer__list--title">
+        <li class="footer__list-title">
           Connect
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Contact
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           Newsletter
         </li>
-        <li class="footer__list--item">
+        <li class="footer__list-item">
           LinkedIn
         </li>
       </ul>
-
-    </div>
   </footer>
 
   <script src="./Js/Index.js"></script>
