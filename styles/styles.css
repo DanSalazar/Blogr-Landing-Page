@@ -13,7 +13,7 @@
     --body-copy: hsl(207, 13%, 34%);
     --button-transparent: hsla(0, 0%, 100%, 0.15);
     --footer-bg: hsl(240, 10%, 16%);
-    --cta-gradient: linear-gradient(-160deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
+    --cta-gradient: linear-gradient(180deg, hsl(13, 100%, 72%), hsl(353, 100%, 62%));
     --body-gradient: linear-gradient(35deg, hsl(237, 17%, 21%), hsl(237, 23%, 32%));
 
     /* Tipography */
@@ -45,15 +45,21 @@
 }
 
 @media screen and (min-width: 1024px) {
+    :root {
+        --size-title: 2.75em;
+    }
+}
+
+@media screen and (min-width: 1280px) {
+    :root {
+        --normal-text-size: 17px;  
+        --size-title: 2.75em;
+    }
+}
+
+@media screen and (min-width: 1600px) {
     :root {  
-        --normal-text-size: 16px;
-        --text-very-small: .5em;
-        --text-small: .75em;
-        --text-medium: .875em;
-        --text-normal: 1em;
-        --text-semi-normal: 1.25em;
-        --text-semi-big: 1.5em;
-        --text-big: 2em;
+        --normal-text-size: 20px;
     }
 }
 
@@ -171,6 +177,7 @@ ul {
 
 .header__title {
     color: #fff;
+    font-size: var(--text-big);
     margin: var(--m-0-50) 0;
 }
 
@@ -206,6 +213,10 @@ ul {
     text-align: center;
     border-radius: 8px;
     box-shadow: 2px 3px 8px 0 hsla(0, 0%, 11%, 0.1);
+}
+
+.header__logo-img {
+    width: 70%;
 }
 
 .nav.show {
@@ -268,7 +279,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: var(--ubuntu);
+    font-family: var(--overpass);
 }
 
 .main__section {
@@ -333,15 +344,23 @@ ul {
     background-position:top;
     background-size: cover;
     position: relative;
-    height: 37.5em;
-    margin: 10em 0 0em 0;
-    padding: 0 0 3.25em 0;
-    display: flex;
-    min-width: 100%;
-    justify-content: center;
-    align-items: flex-end;
     border-bottom-left-radius: 5.625em;
     border-top-right-radius: 5.625em;
+    height: 37.5em;
+    margin: 10em 0 0em 0;
+    min-width: 100%;
+    padding: 0 0 3em 0;
+    display: flex;
+    justify-content: center;
+}
+
+.main__phones-container {
+    width: 100%;
+    padding: 1em 0 0 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
 }
 
 .main__svg {
@@ -350,6 +369,11 @@ ul {
 }
 
 @media screen and (min-width: 540px) {
+
+    .main__phones-container {
+        padding: 0;
+    }
+
     .main__svg {
         top: -12.5em;
     }
@@ -365,6 +389,8 @@ ul {
     max-width: 80%;
 }
 
+/* Footer */
+
 .footer {
     height: 100%;
     background: var(--footer-bg);
@@ -379,18 +405,51 @@ ul {
     margin: var(--m-2) 0;
 }
 
-.footer__list-title {
+.footer__list {
+    margin: 0 0 var(--m-3) 0;
+}
+
+.footer__title {
+    margin: var(--m-2) 0;
+}
+
+.footer__link-title {
     font-weight: var(--f-semi-bold);
     font-size: var(--text-normal);
     color: var(--white);
-    margin: var(--m-1-5) 0;
+    text-decoration: none;
 }
 
-.footer__list-item {
+.footer__item {
     margin: var(--m-0-75) 0;
+}
+
+.footer__link {
     font-size: var(--text-medium);
-    transition: 0.2s linear;
     cursor: pointer;
+    color: var(--footer-text);
+}
+
+
+
+@media screen and (min-width: 767px){
+    .main__svg {
+        position: static;
+        max-width: 50%;
+    }
+    
+    .main__phones-container {
+        align-items: center;
+        width: 80%;
+        padding: 1em 0 0 0;
+        justify-content: space-between;
+    }
+    
+    .main__phones {
+        height: 21.875em;
+        padding: 0;
+        align-items: center;
+    }
 }
 
 @media screen and (min-width: 1024px){
@@ -412,6 +471,12 @@ ul {
     }
 
     /* CSS */
+
+    /* Header */
+
+    .header__title {
+        font-size: var(--size-title);
+    }
 
     .header__navigation {
         width: 80%;
@@ -439,8 +504,7 @@ ul {
 
     .nav__lists {
         display: inline-flex;
-        width: 35%;
-        max-width: 40%;
+        width: 40%;
         justify-content: space-around;
         align-items: center;
     }
@@ -455,6 +519,10 @@ ul {
         font-size: var(--text-medium);
     }
 
+    .nav__link {
+        font-size: var(--text-medium);
+    }
+
     .nav__link:hover {
         color: #000;
     }
@@ -464,8 +532,8 @@ ul {
         right: -35px;
         text-align: start;
         background: var(--white);
-        padding: 0.75em 1em;
-        width: 130px;
+        padding: 1em 1.25em;
+        width: 150px;
         border-radius: 8px;
     }
 
@@ -474,7 +542,8 @@ ul {
         margin: 0;
     }
 
-    /* main */
+    /* Main */
+
     .main {
         width: 100%;
         display: flex;
@@ -490,6 +559,8 @@ ul {
     
     .main__title {
         font-size: var(--text-big);
+        font-family: var(--overpass);
+        font-weight: var(--f-bold);
     }
     
     .main__articles {
@@ -501,26 +572,20 @@ ul {
         justify-content: center;
         flex-direction: column;
         align-items: flex-start;
-        height: 600px;
+        height: 37.5em;
     }
     
     .main__svg {
-        position: static
-    }
-
-    .main__phones {
-        height: 400px;
-        justify-content: space-around;
-        align-items: center;
-        padding: 0;
+        max-width: 100%;
     }
 
     .articles--right {
         display: flex;
+        margin: 4em 0;
         justify-content: center;
         flex-direction: column;
         align-items: flex-end;
-        height: 750px;
+        height: 37.5em;
     }
     
     .article {
@@ -529,7 +594,11 @@ ul {
     }
     
     .article__title {
-        font-size: var(--text-semi-big);
+        font-size: var(--text-big);
+    }
+
+    .article__text {
+        font-weight: var(--f-light);
     }
     
     .main__illustration-m {
@@ -543,13 +612,15 @@ ul {
     
     .illustration--e {
         top: 0;
-        right: -450px;
+        right: -28.125em;
     }
     
     .illustration--l {
-        top: 0;
-        left: -450px;
+        top: 2em;
+        left: -28.125em;
     }
+
+    /* Footer */
 
     .footer {
         display: flex;
@@ -568,14 +639,18 @@ ul {
         display: inline-block;
     }
     
-    .footer__list-title {
+    .footer__title {
         margin: 0 0 var(--m-2) 0;
         font-size: var(--text-medium);
     }
     
-    .footer__list-item {
+    .footer__item {
         font-size: var(--text-small);
         margin: var(--m-1-5) 0;
+    }
+
+    .footer__item:hover {
+        border-bottom: 1px solid var(--white);
     }
 
 }

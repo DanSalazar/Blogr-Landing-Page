@@ -11,7 +11,7 @@ hambuger.addEventListener('click', () => {
 
 navList.forEach((element, index) => {
     element.addEventListener('click', () => {
-        navSubNavigation[index].classList.add('show');
+        navSubNavigation[index].classList.toggle('show');
         
         for(let i = 0; i < navSubNavigation.length; i++){
             if( index !== i ){
@@ -20,6 +20,6 @@ navList.forEach((element, index) => {
             }
         }
 
-        iconsNav[index].classList.add('reverse');
+        iconsNav[index].classList.toggle('reverse');
     })
 })
