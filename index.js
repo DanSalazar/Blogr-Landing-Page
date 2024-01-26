@@ -1,25 +1,44 @@
-const navList = document.querySelectorAll('.nav__title')
+const navList = document.querySelector('.nav__lists')
 const navSubNavigation = document.querySelectorAll('.nav__sublist')
 const iconsNav = document.querySelectorAll('.nav__icon')
 const hambuger = document.querySelector('#hamburger')
 const nav = document.querySelector('.nav')
+let lastNavElementOpen = null
+let lastIconOpen = null
+let lastButtonSelected = null
 
 hambuger.addEventListener('click', () => {
 	nav.classList.toggle('show')
 	hambuger.classList.toggle('open')
 })
 
-navList.forEach((element, index) => {
-	element.addEventListener('click', () => {
-		navSubNavigation[index].classList.toggle('show')
-		
-		for(let i = 0; i < navSubNavigation.length; i++){
-			if( index !== i ){
-				navSubNavigation[i].classList.remove('show')
-				iconsNav[i].classList.remove('reverse')
-			}
+const closeNavItem = () => {
+	lastNavElementOpen && lastNavElementOpen.classList.remove('show')
+	lastIconOpen && lastIconOpen.classList.remove('reverse')
+}
+
+const assignItems = (target) => {
+	lastIconOpen = target.children[0]
+	lastNavElementOpen = target.nextElementSibling
+	lastButtonSelected = target
+} 
+
+navList.addEventListener('click', ({ target }) => {
+	if (target.tagName === 'BUTTON') {
+		if (lastButtonSelected === target) {
+			closeNavItem()
+			lastIconOpen = null
+			lastNavElementOpen = null
+			lastButtonSelected = null
+			return
 		}
 
-		iconsNav[index].classList.toggle('reverse')
-	})
+		lastNavElementOpen && lastNavElementOpen.classList.remove('show')
+		lastIconOpen && lastIconOpen.classList.remove('reverse')
+
+		assignItems(target)
+
+		lastNavElementOpen.classList.toggle('show')
+		lastIconOpen?.classList.add('reverse')
+	}
 })
